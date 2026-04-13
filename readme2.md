@@ -1,3 +1,7 @@
+
+deployed link : https://frontend-sprint-sand.vercel.app/
+
+
 # 🚀 AI Roast My Life 2.0 — Reality Check Engine
 
 > *“Not just a weather app… it’s your brutally honest life analyst.”* 😈
