@@ -43,7 +43,7 @@ export default function InputForm({ onSubmit, isLoading }) {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-[var(--text-muted)] mb-1">Current Mood</label>
             <div className="relative">
@@ -99,7 +99,7 @@ export default function InputForm({ onSubmit, isLoading }) {
 
         <div>
           <label className="block text-sm font-medium text-[var(--text-muted)] mb-3">AI Personality Mode</label>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {modes.map(m => (
               <button
                 key={m}
