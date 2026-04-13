@@ -68,25 +68,41 @@ export default function ResultCards({ data, onReset }) {
       animate="show"
       className="max-w-4xl mx-auto w-full space-y-6 text-left origin-top"
     >
-      {/* Header Actions */}
-      <div className="flex flex-wrap justify-between items-center gap-4 mb-8">
-        <button 
-          onClick={() => speakText(data.roast + ". " + data.summary)}
-          className={`flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all ${
-            isSpeaking ? 'bg-violet-600 text-[var(--text-main)] animate-pulse' : 'bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-main)] hover:shadow-md'
-          }`}
-        >
-          <Volume2 className="h-4 w-4" />
-          {isSpeaking ? 'Stop roasting...' : 'Roast me out loud'}
-        </button>
+      {/* Header Actions & Weather Badge */}
+      <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-8 w-full">
+        {data.weather && (
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="flex items-center gap-3 px-5 py-2 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-main)] shadow-sm text-sm font-bold w-full md:w-auto overflow-auto"
+          >
+            <span className="whitespace-nowrap">📍 {data.weather.location}</span>
+            <span className="opacity-30">|</span>
+            <span className="whitespace-nowrap">🌡️ {data.weather.temperature}°C</span>
+            <span className="opacity-30">|</span>
+            <span className="whitespace-nowrap">☁️ {data.weather.condition}</span>
+          </motion.div>
+        )}
 
-        <button 
-          onClick={() => setShowReasoning(!showReasoning)}
-          className="flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-main)] hover:shadow-md transition-all font-medium"
-        >
-          <HelpCircle className="h-4 w-4 text-violet-400" />
-          Why did AI say this?
-        </button>
+        <div className="flex flex-wrap justify-end items-center gap-4 ml-auto">
+          <button 
+            onClick={() => speakText(data.roast + ". " + data.summary)}
+            className={`flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all ${
+              isSpeaking ? 'bg-violet-600 text-[var(--text-main)] animate-pulse' : 'bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-main)] hover:shadow-md'
+            }`}
+          >
+            <Volume2 className="h-4 w-4" />
+            {isSpeaking ? 'Stop roasting...' : 'Roast me'}
+          </button>
+
+          <button 
+            onClick={() => setShowReasoning(!showReasoning)}
+            className="flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-main)] hover:shadow-md transition-all font-medium"
+          >
+            <HelpCircle className="h-4 w-4 text-violet-400" />
+            Why?
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>

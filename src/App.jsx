@@ -26,7 +26,7 @@ function App() {
       // 2. Fetch AI Analysis
       const analysisData = await generateRealityCheck(userData, weatherData, userData.mode);
       
-      setResult(analysisData);
+      setResult({ ...analysisData, weather: weatherData });
     } catch (err) {
       console.error(err);
       setError(err.message || 'Something went horribly wrong. How fitting.');

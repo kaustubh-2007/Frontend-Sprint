@@ -21,6 +21,7 @@ Analyze the user's day based on the following data:
 - Current Mood: ${userData.mood}
 - Sleep Hours: ${userData.sleep}
 - Today's Plans: ${userData.plans}
+- Random Entropy: ${Math.random().toString(36).substring(7)} (Use this seed to radically change your creative angle, vocabulary, and specific futuristic scenarios generated compared to previous times. Never repeat the exact same scenario.)
 
 Return ONLY valid JSON in this format:
 {
@@ -46,8 +47,8 @@ Future Simulation Rules:
 - "best" must be highly optimistic and successful
 - "worst" must be clearly negative or failure scenario
 - "realistic" must be balanced and practical
-- ALL three must be clearly different from each other
-- Use different wording and tone for each
+- ALL three must be creatively absurd, wildly divergent, and completely different from each other.
+- Use deeply specific, wildly different nouns, verbs, and contexts every single time you are asked. Do not use generic phrases.
 `;
 
   try {
@@ -58,13 +59,13 @@ Future Simulation Rules:
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "llama-3.1-8b-instant",
+        model: "llama-3.3-70b-versatile",
         messages: [
           { role: "system", content: systemTone + " ALWAYS RESPOND WITH VALID JSON ONLY." },
           { role: "user", content: prompt }
         ],
-        temperature: 0.7,
-        max_tokens: 500
+        temperature: 1.0,
+        max_tokens: 600
       })
     });
 
