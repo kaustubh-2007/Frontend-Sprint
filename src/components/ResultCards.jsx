@@ -207,17 +207,17 @@ export default function ResultCards({ data, onReset }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-emerald-900/20 rounded-xl p-5 border border-emerald-500/50 shadow-[0_0_15px_rgba(16,185,129,0.15)] relative overflow-hidden group hover:shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02]">
             <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent"></div>
-            <h4 className="text-emerald-400 text-xs uppercase font-bold tracking-wider mb-2 flex items-center justify-between relative z-10">Best Case <span className="text-emerald-500 bg-emerald-500/10 px-2 py-0.5 rounded text-[10px]">1% chance</span></h4>
+            <h4 className="text-emerald-400 text-xs uppercase font-bold tracking-wider mb-2 relative z-10">Best Case</h4>
             <p className="text-slate-200 text-sm relative z-10">{data.future?.best || "You somehow succeed."}</p>
           </div>
           <div className="bg-rose-900/20 rounded-xl p-5 border border-rose-500/50 shadow-[0_0_15px_rgba(244,63,94,0.15)] relative overflow-hidden group hover:shadow-[0_0_20px_rgba(244,63,94,0.3)] transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02]">
             <div className="absolute inset-0 bg-gradient-to-br from-rose-500/10 to-transparent"></div>
-            <h4 className="text-rose-400 text-xs uppercase font-bold tracking-wider mb-2 flex items-center justify-between relative z-10">Worst Case <span className="text-rose-500 bg-rose-500/10 px-2 py-0.5 rounded text-[10px]">99% chance</span></h4>
+            <h4 className="text-rose-400 text-xs uppercase font-bold tracking-wider mb-2 relative z-10">Worst Case</h4>
             <p className="text-slate-200 text-sm relative z-10">{data.future?.worst || "Total catastrophe."}</p>
           </div>
           <div className="bg-amber-900/20 rounded-xl p-5 border border-amber-500/50 shadow-[0_0_15px_rgba(245,158,11,0.15)] relative overflow-hidden group hover:shadow-[0_0_20px_rgba(245,158,11,0.3)] transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02]">
             <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-transparent"></div>
-            <h4 className="text-amber-400 text-xs uppercase font-bold tracking-wider mb-2 flex items-center justify-between relative z-10">Realistic <span className="text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded text-[10px]">Loading...</span></h4>
+            <h4 className="text-amber-400 text-xs uppercase font-bold tracking-wider mb-2 relative z-10">Realistic</h4>
             <p className="text-slate-200 text-sm relative z-10">{data.future?.realistic || "A very mediocre day."}</p>
           </div>
         </div>
